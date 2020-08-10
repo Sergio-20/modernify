@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "name": "Modernify",
+  "description": "This extension will inject Bootstrap into websites in order to make old websites responsive and look more modern.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "./img/icon128.png"
+  },
+  "icons": {
+    "16": "./img/icon16.png",
+    "48": "./img/icon48.png",
+    "128": "./img/icon128.png"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.com/*",
+        "https://*.net/*",
+        "https://*.org/*",
+        "https://*.gov/*",
+        "https://*.us/*",
+        "http://*.com/*",
+        "http://*.net/*",
+        "http://*.org/*",
+        "http://*.gov/*",
+        "http://*.us/*"
+      ],
+      "css": ["bootstrap.css"],
+      "js": ["container.js"]
+    }
+  ]
+}
